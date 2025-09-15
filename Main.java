@@ -1,33 +1,24 @@
-import java.util.Scanner;
-class ZooManagement {
+public class Main {
     public static void main(String[] args) {
-        int nbrCages = 20;
-        String zooName = "my zoo";
+        // Création d'un animal
+        Animal dog = new Animal("dddd", "lili", 5, true);
+        Animal cat = new Animal("ssss", "sousou", 3, true);
 
-        System.out.println("Nom du zoo : " + zooName + ", Nombre de cages : " + nbrCages);
+        // Création d'un zoo
+        Zoo myZoo = new Zoo("MyZoo", "Tunis", 20);
 
-        Scanner sc = new Scanner(System.in);
+        // Ajout des animaux dans le zoo
+        myZoo.animals[0] = dog;
+        myZoo.animals[1] = cat;
 
-        System.out.print("Entrez le nom du zoo : ");
-        zooName = sc.nextLine();
+        // Affichage via displayZoo()
+        myZoo.displayZoo();
 
-        // nom non vide
-        while (zooName.trim().isEmpty()) {
-            System.out.print("Le nom ne peut pas être vide : ");
-            zooName = sc.nextLine();
-        }
+        System.out.println("\nAffichage direct de l'objet Zoo:");
+        System.out.println(myZoo); // appelle automatiquement toString()
 
-        System.out.print("Entrez le nombre de cages : ");
-        nbrCages = sc.nextInt();
-
-        // nombre positif
-        while (nbrCages <= 0) {
-            System.out.print("Le nombre doit être positif : ");
-            nbrCages = sc.nextInt();
-        }
-
-        System.out.println(zooName + " comporte " + nbrCages + " cages.");
-
-        sc.close();
+        System.out.println("\nAffichage des animaux:");
+        System.out.println(dog);
+        System.out.println(cat);
     }
 }
