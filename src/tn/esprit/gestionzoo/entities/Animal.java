@@ -1,11 +1,14 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Animal {
-    // Attributs
-    private  String family;
-    private String name;
-    private int age;
-    private  boolean isMammal;
+    // Attributs protégés pour l'héritage
+    protected String family;
+    protected String name;
+    protected int age;
+    protected boolean isMammal;
+
+    // Constructeur par défaut (utile pour l'instruction 21)
+    public Animal() { }
 
     // Constructeur paramétré
     public Animal(String family, String name, int age, boolean isMammal) {
@@ -15,48 +18,27 @@ public class Animal {
         this.isMammal = isMammal;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String n) { this.name = n; }
 
-    public void setName(String n) {
-        this.name = n;
+    public String getFamily() { return family; }
+    public void setFamily(String type) { this.family = type; }
 
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String type) {
-        this.family = type;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
+    public int getAge() { return age; }
     public void setAge(int age) {
         if (age < 0) {
-            this.age = 0; // âge par défaut si négatif
+            System.out.println("age cannot be negative");
+            this.age = 0;
         } else {
             this.age = age;
         }
     }
-    public boolean  isIsMammal () {
-        return isMammal ;
-    }
 
-    public void setIsMammal(boolean isMammal) {
-        this.isMammal = isMammal;
-    }
+    public boolean isMammal() { return isMammal; }
+    public void setMammal(boolean isMammal) { this.isMammal = isMammal; }
 
-    // Redéfinition de la méthode toString()
-    // @Override
+    @Override
     public String toString() {
         return "Animal [Nom: " + name + ", Famille: " + family + ", Age: " + age + ", Mammifère: " + isMammal + "]";
     }
-
-
-
 }
