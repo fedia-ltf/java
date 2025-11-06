@@ -15,7 +15,11 @@ public class Penguin extends Aquatic {
 
     @Override
     public String toString() {
-        return super.toString() + ", Profondeur de nage: " + swimmingDepth;
-    }
-    // hérite swim() d'Aquatic (si tu veux, on peut override)
+        return super.toString() + ", Profondeur: " + swimmingDepth;
+    } // Affiche pingouin avec profondeur
+
+    @Override
+    public void swim() {
+        System.out.println(name + " le pingouin nage à " + swimmingDepth + " m.");
+    } // Affiche le comportement de nage
 }

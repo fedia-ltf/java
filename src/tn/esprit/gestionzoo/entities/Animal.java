@@ -1,5 +1,4 @@
 package tn.esprit.gestionzoo.entities;
-
 public class Animal {
     // Attributs protégés pour l'héritage
     protected String family;
@@ -7,8 +6,7 @@ public class Animal {
     protected int age;
     protected boolean isMammal;
 
-    // Constructeur par défaut (utile pour l'instruction 21)
-    public Animal() { }
+    public Animal() { }  // Constructeur par défaut (utile pour l'instruction 21
 
     // Constructeur paramétré
     public Animal(String family, String name, int age, boolean isMammal) {
@@ -17,7 +15,6 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
-
     public String getName() { return name; }
     public void setName(String n) { this.name = n; }
 
