@@ -36,13 +36,8 @@ public class Employe implements Comparable<Employe> {
     // ✅ toString
     @Override
     public String toString() {
-        return "Employe{" +
-                "id=" + id +
-                ", nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", departement='" + nomDepartement + '\'' +
-                ", grade=" + grade +
-                '}';
+        return "Employe{" + "id=" + id + " / nom='"+nom + " / prenom='" + prenom  + " / departement='" + nomDepartement + '\'' +
+                ", grade=" + grade + '}';
     }
 
     // ✅ Tri naturel par id

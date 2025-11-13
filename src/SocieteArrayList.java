@@ -40,12 +40,37 @@ public class SocieteArrayList implements IGestion<Employe>, IRechercheAvancee<Em
         Collections.sort(employes); // utilise compareTo()
     }
 
-    @Override
+   /* @Override
     public void trierEmployeParNomDépartementEtGrade() {
         employes.sort(Comparator
                 .comparing(Employe::getNomDepartement)
                 .thenComparing(Employe::getGrade)
                 .thenComparing(Employe::getNom));
+    }
+
+    */
+
+    @Override
+    public void trierEmployeParNomDépartementEtGrade() {
+        Collections.sort(employes, new Comparator<Employe>() {
+            @Override
+            public int compare(Employe e1, Employe e2) {
+                //D’abord comparer par nom de département
+                int res = e1.getNomDepartement().compareTo(e2.getNomDepartement());
+
+                //le département est le même, comparer par grade
+                if (res == 0) {
+                    res = Integer.compare(e1.getGrade(), e2.getGrade());
+                }
+
+                // Si même département et même grade, comparer par nom
+                if (res == 0) {
+                    res = e1.getNom().compareTo(e2.getNom());
+                }
+
+                return res; // résultat du tri
+            }
+        });
     }
 
     @Override
