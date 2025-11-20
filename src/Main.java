@@ -1,8 +1,10 @@
 public class Main {
     public static void main(String[] args) {
+       /* prosit 8
         SocieteArrayList societe = new SocieteArrayList();
 
-        // ✅ Ajout d’employés
+
+        // Ajout d’employés
         Employe e1 = new Employe(3, "Ali", "Ben Salem", "Informatique", 2);
         Employe e2 = new Employe(1, "Sara", "Trabelsi", "Comptabilité", 1);
         Employe e3 = new Employe(2, "Houssem", "Gharbi", "Informatique", 3);
@@ -13,22 +15,47 @@ public class Main {
         societe.ajouterEmploye(e3);
         societe.ajouterEmploye(e4);
 
-        System.out.println("📋 Liste initiale :");
+        System.out.println(" Liste initiale :");
         societe.displayEmploye();
 
-        System.out.println("\n🔍 Recherche par nom 'Sara' : " + societe.rechercherEmploye("Sara"));
+        System.out.println("\n Recherche par nom 'Sara' : " + societe.rechercherEmploye("Sara"));
 
-        System.out.println("\n🗂️ Tri naturel (par id) :");
+        System.out.println("\n Tri naturel (par id) :");
         societe.trierEmployeParId();
         societe.displayEmploye();
 
-        System.out.println("\n📑 Tri personnalisé (Département → Grade → Nom) :");
+        System.out.println("\n Tri personnalisé (Département → Grade → Nom) :");
         societe.trierEmployeParNomDépartementEtGrade();
         societe.displayEmploye();
 
-        System.out.println("\n🏢 Employés du département 'Informatique' :");
+        System.out.println("\n Employés du département 'Informatique' :");
         for (Employe e : societe.rechercherParDepartement("Informatique")) {
             System.out.println(e);
         }
+     */
+
+
+
+        //prosit 9
+        DepartementHashSet depSet = new DepartementHashSet();
+
+        Departement d1 = new Departement(1, "Informatique", 12);
+        Departement d2 = new Departement(2, "Marketing", 7);
+        Departement d3 = new Departement(3, "Comptabilité", 5);
+
+        depSet.ajouterDepartement(d1);
+        depSet.ajouterDepartement(d2);
+        depSet.ajouterDepartement(d3);
+
+        System.out.println(" Liste des départements :");
+        depSet.afficherDepartements();
+
+        System.out.println("\nRecherche 'Marketing' : " + depSet.rechercherDepartement("Marketing"));
+
+        System.out.println("\nTri par id :");
+        depSet.trierDepartementsParId();
+
+        System.out.println("\nTri par nom + nombre employés :");
+        depSet.trierDepartementsParNomEtNombreEmployes();
     }
 }
