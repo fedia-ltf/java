@@ -1,6 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-       /* prosit 8
+
+//prosit 10
+        AffectationHashMap ah = new AffectationHashMap();
+
+        Employe e1 = new Employe(1, "Ali", "Karoui", "RH", 3);
+        Employe e2 = new Employe(2, "Fedia", "Letaief", "Info", 2);
+        Employe e3 = new Employe(3, "Rihem", "Ousleti", "Marketing", 1);
+
+        Departement d1 = new Departement(10, "RH", 20);
+        Departement d2 = new Departement(20, "Informatique", 50);
+
+        ah.ajouterEmployeDepartement(e1, d1);
+        ah.ajouterEmployeDepartement(e2, d2);
+
+        // Tester doublon
+        ah.ajouterEmployeDepartement(e1, d2);
+
+        ah.afficherEmployesEtDepartements();
+    }
+}
+
+
+
+     /* prosit 8
         SocieteArrayList societe = new SocieteArrayList();
 
 
@@ -36,7 +59,7 @@ public class Main {
 
 
 
-        //prosit 9
+        /*prosit 9
         DepartementHashSet depSet = new DepartementHashSet();
 
         Departement d1 = new Departement(1, "Informatique", 12);
@@ -57,5 +80,9 @@ public class Main {
 
         System.out.println("\nTri par nom + nombre employés :");
         depSet.trierDepartementsParNomEtNombreEmployes();
-    }
-}
+    }*/
+
+
+
+
+
